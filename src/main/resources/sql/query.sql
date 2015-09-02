@@ -1,0 +1,182 @@
+create table currency(currency_id int primary key not null, name char(3));
+
+insert into currency values (1,'EUR');
+insert into currency values (2,'GBP');
+insert into currency values (3,'USD');
+
+create table fxrates(data_date date, currency_id int, rate numeric);
+
+insert into fxrates values ('2015-08-01',1,1.12);
+insert into fxrates values ('2015-08-02',1,1.12876987911278);
+insert into fxrates values ('2015-08-03',1,1.13875035469765);
+insert into fxrates values ('2015-08-04',1,1.13591237221203);
+insert into fxrates values ('2015-08-05',1,1.13631791226799);
+insert into fxrates values ('2015-08-06',1,1.14559998216911);
+insert into fxrates values ('2015-08-07',1,1.14243351903158);
+insert into fxrates values ('2015-08-08',1,1.1472158784577);
+insert into fxrates values ('2015-08-09',1,1.15537355707927);
+insert into fxrates values ('2015-08-10',1,1.14562330394561);
+insert into fxrates values ('2015-08-11',1,1.14594737015319);
+insert into fxrates values ('2015-08-12',1,1.14431436921479);
+insert into fxrates values ('2015-08-13',1,1.15170408704722);
+insert into fxrates values ('2015-08-14',1,1.15537288363665);
+insert into fxrates values ('2015-08-15',1,1.15059565690375);
+insert into fxrates values ('2015-08-16',1,1.14406633782585);
+insert into fxrates values ('2015-08-17',1,1.13643145129151);
+insert into fxrates values ('2015-08-18',1,1.14413209876536);
+insert into fxrates values ('2015-08-19',1,1.14981819543248);
+insert into fxrates values ('2015-08-20',1,1.15945810118941);
+insert into fxrates values ('2015-08-21',1,1.16840742592157);
+insert into fxrates values ('2015-08-22',1,1.17149721479217);
+insert into fxrates values ('2015-08-23',1,1.16205738977831);
+insert into fxrates values ('2015-08-24',1,1.16896033070404);
+insert into fxrates values ('2015-08-25',1,1.16883848297332);
+insert into fxrates values ('2015-08-26',1,1.15993386411469);
+insert into fxrates values ('2015-08-27',1,1.15426137681933);
+insert into fxrates values ('2015-08-28',1,1.15771448658142);
+insert into fxrates values ('2015-08-29',1,1.15207392684636);
+insert into fxrates values ('2015-08-30',1,1.14286541298386);
+insert into fxrates values ('2015-08-31',1,1.15228973891049);
+
+
+insert into fxrates values ('2015-08-01',2,1.54);
+insert into fxrates values ('2015-08-02',2,1.54639971202957);
+insert into fxrates values ('2015-08-03',2,1.54702481434465);
+insert into fxrates values ('2015-08-04',2,1.55168272585952);
+insert into fxrates values ('2015-08-05',2,1.5610380857292);
+insert into fxrates values ('2015-08-06',2,1.55812108544448);
+insert into fxrates values ('2015-08-07',2,1.54957577552857);
+insert into fxrates values ('2015-08-08',2,1.55352559640403);
+insert into fxrates values ('2015-08-09',2,1.54678124726269);
+insert into fxrates values ('2015-08-10',2,1.54400155240501);
+insert into fxrates values ('2015-08-11',2,1.54581870128912);
+insert into fxrates values ('2015-08-12',2,1.55362798176747);
+insert into fxrates values ('2015-08-13',2,1.54697792961778);
+insert into fxrates values ('2015-08-14',2,1.54744664485452);
+insert into fxrates values ('2015-08-15',2,1.55218969563458);
+insert into fxrates values ('2015-08-16',2,1.55346702182383);
+insert into fxrates values ('2015-08-17',2,1.55134008298178);
+insert into fxrates values ('2015-08-18',2,1.55623140932667);
+insert into fxrates values ('2015-08-19',2,1.56362858306848);
+insert into fxrates values ('2015-08-20',2,1.57174217608734);
+insert into fxrates values ('2015-08-21',2,1.57389832041232);
+insert into fxrates values ('2015-08-22',2,1.57710216061771);
+insert into fxrates values ('2015-08-23',2,1.57159008076846);
+insert into fxrates values ('2015-08-24',2,1.57608807333389);
+insert into fxrates values ('2015-08-25',2,1.57485179086615);
+insert into fxrates values ('2015-08-26',2,1.56655912309959);
+insert into fxrates values ('2015-08-27',2,1.55891481192972);
+insert into fxrates values ('2015-08-28',2,1.55633883761815);
+insert into fxrates values ('2015-08-29',2,1.55057256433248);
+insert into fxrates values ('2015-08-30',2,1.54761516518381);
+insert into fxrates values ('2015-08-31',2,1.55458292291635);
+
+
+create table asset(asset_id INT primary key not null, asset_code char(10), currency_id int);
+
+insert into asset values (1,'ABC', 3);
+insert into asset values (2,'DEF',2);
+insert into asset values (3,'XYZ',1);
+
+
+
+
+create table assetprices(data_date date, asset_id int, closing_price NUMERIC );
+
+
+insert into assetprices values ('2015-08-01',1,10)	;
+insert into assetprices values ('2015-08-02',1,10.5);
+insert into assetprices values ('2015-08-03',1,11)  ;
+insert into assetprices values ('2015-08-04',1,11.5);
+insert into assetprices values ('2015-08-05',1,12)  ;
+insert into assetprices values ('2015-08-06',1,12.5);
+insert into assetprices values ('2015-08-07',1,13)  ;
+insert into assetprices values ('2015-08-08',1,13.5);
+insert into assetprices values ('2015-08-09',1,14)  ;
+insert into assetprices values ('2015-08-10',1,14.5);
+insert into assetprices values ('2015-08-11',1,15)  ;
+insert into assetprices values ('2015-08-12',1,15.5);
+insert into assetprices values ('2015-08-13',1,16)  ;
+insert into assetprices values ('2015-08-14',1,16.5);
+insert into assetprices values ('2015-08-15',1,17)  ;
+insert into assetprices values ('2015-08-16',1,17.5);
+insert into assetprices values ('2015-08-17',1,18)  ;
+insert into assetprices values ('2015-08-18',1,18.5);
+insert into assetprices values ('2015-08-19',1,19)  ;
+insert into assetprices values ('2015-08-20',1,19.5);
+insert into assetprices values ('2015-08-21',1,20)  ;
+insert into assetprices values ('2015-08-22',1,20.5);
+insert into assetprices values ('2015-08-23',1,21)  ;
+insert into assetprices values ('2015-08-24',1,21.5);
+insert into assetprices values ('2015-08-25',1,22)  ;
+insert into assetprices values ('2015-08-26',1,22.5);
+insert into assetprices values ('2015-08-27',1,23)	;
+insert into assetprices values ('2015-08-28',1,23.5);
+insert into assetprices values ('2015-08-29',1,24)  ;
+insert into assetprices values ('2015-08-30',1,24.5);
+insert into assetprices values ('2015-08-31',1,25)  ;
+
+insert into assetprices values ('2015-08-01',2,100);
+insert into assetprices values ('2015-08-02',2,99) ;
+insert into assetprices values ('2015-08-03',2,98) ;
+insert into assetprices values ('2015-08-04',2,97) ;
+insert into assetprices values ('2015-08-05',2,96) ;
+insert into assetprices values ('2015-08-06',2,95) ;
+insert into assetprices values ('2015-08-07',2,94) ;
+insert into assetprices values ('2015-08-08',2,93) ;
+insert into assetprices values ('2015-08-09',2,92) ;
+insert into assetprices values ('2015-08-10',2,91) ;
+insert into assetprices values ('2015-08-11',2,90) ;
+insert into assetprices values ('2015-08-12',2,89) ;
+insert into assetprices values ('2015-08-13',2,88) ;
+insert into assetprices values ('2015-08-14',2,87) ;
+insert into assetprices values ('2015-08-15',2,86) ;
+insert into assetprices values ('2015-08-16',2,85) ;
+insert into assetprices values ('2015-08-17',2,84) ;
+insert into assetprices values ('2015-08-18',2,83) ;
+insert into assetprices values ('2015-08-19',2,82) ;
+insert into assetprices values ('2015-08-20',2,81);
+insert into assetprices values ('2015-08-21',2,80);
+insert into assetprices values ('2015-08-22',2,79);
+insert into assetprices values ('2015-08-23',2,78);
+insert into assetprices values ('2015-08-24',2,77);
+insert into assetprices values ('2015-08-25',2,76);
+insert into assetprices values ('2015-08-26',2,75);
+insert into assetprices values ('2015-08-27',2,74);
+insert into assetprices values ('2015-08-28',2,73);
+insert into assetprices values ('2015-08-29',2,72);
+insert into assetprices values ('2015-08-30',2,71);
+insert into assetprices values ('2015-08-31',2,70);
+
+
+insert into assetprices values ('2015-08-01',3,50);
+insert into assetprices values ('2015-08-02',3,52);
+insert into assetprices values ('2015-08-03',3,54);
+insert into assetprices values ('2015-08-04',3,56);
+insert into assetprices values ('2015-08-05',3,58);
+insert into assetprices values ('2015-08-06',3,60);
+insert into assetprices values ('2015-08-07',3,62);
+insert into assetprices values ('2015-08-08',3,64);
+insert into assetprices values ('2015-08-09',3,66);
+insert into assetprices values ('2015-08-10',3,68);
+insert into assetprices values ('2015-08-11',3,70);
+insert into assetprices values ('2015-08-12',3,72);
+insert into assetprices values ('2015-08-13',3,74);
+insert into assetprices values ('2015-08-14',3,76);
+insert into assetprices values ('2015-08-15',3,78);
+insert into assetprices values ('2015-08-16',3,80);
+insert into assetprices values ('2015-08-17',3,82);
+insert into assetprices values ('2015-08-18',3,84);
+insert into assetprices values ('2015-08-19',3,86);
+insert into assetprices values ('2015-08-20',3,88);
+insert into assetprices values ('2015-08-21',3,90);
+insert into assetprices values ('2015-08-22',3,92);
+insert into assetprices values ('2015-08-23',3,94);
+insert into assetprices values ('2015-08-24',3,96);
+insert into assetprices values ('2015-08-25',3,98);
+insert into assetprices values ('2015-08-26',3,100);
+insert into assetprices values ('2015-08-27',3,102);
+insert into assetprices values ('2015-08-28',3,104);
+insert into assetprices values ('2015-08-29',3,106);
+insert into assetprices values ('2015-08-30',3,108);
+insert into assetprices values ('2015-08-31',3,110);
